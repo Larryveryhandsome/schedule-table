@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule Table</title>
+    <title>行程表</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,185 +11,116 @@
             padding: 0;
             background-color: #f4f4f9;
         }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
             text-align: center;
+            color: #333;
         }
         table {
-            width: 90%;
-            margin: 20px auto;
+            width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         table, th, td {
             border: 1px solid #ddd;
         }
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
         }
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #f4f4f9;
+            color: #333;
         }
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f9f9f9;
+        }
+        .search {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .search input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Schedule Table</h1>
-    </header>
-    <main>
-        <table>
+    <div class="container">
+        <h1>行程表</h1>
+        <div class="search">
+            <input type="text" id="searchBox" placeholder="搜索物件...">
+        </div>
+        <table id="scheduleTable">
             <thead>
                 <tr>
-                    <th>Order</th>
-                    <th>Route Time</th>
-                    <th>On-site Time</th>
-                    <th>Estimated Time</th>
-                    <th>Object Address</th>
-                    <th>Development Type</th>
-                    <th>Owner Name</th>
+                    <th>物件名稱</th>
+                    <th>類型</th>
+                    <th>地址</th>
+                    <th>屋主</th>
+                    <th>價格</th>
+                    <th>狀態</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>7</td>
-                    <td>3</td>
-                    <td>12:45</td>
-                    <td>宜蘭縣宜蘭市林森路336巷12號</td>
-                    <td>近轉運站通勤族最愛孝親四房樓中樓</td>
-                    <td>黃S</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>12</td>
-                    <td>5</td>
-                    <td>1:02</td>
-                    <td>宜蘭市鎮平路218號</td>
-                    <td>宜蘭市凱旋二段農建地  0467地號</td>
-                    <td>呂小姐</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>15</td>
-                    <td>8</td>
-                    <td>1:25</td>
-                    <td>宜蘭縣員山鄉茄苳路3之1號</td>
-                    <td>員山鄉茄苳乙種建地使用空間大稀有廠房</td>
-                    <td>林R</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>15</td>
-                    <td>12</td>
-                    <td>1:52</td>
-                    <td>宜蘭縣宜蘭市泰山路112巷1弄26號</td>
-                    <td>新月商圈文化中心文教區超優透天</td>
-                    <td>伍R</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>2:01</td>
-                    <td>健康路三段43號</td>
-                    <td>宜市離塵不離城穩定收租雙面路廠房</td>
-                    <td>李R1/2</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td>2:08</td>
-                    <td>宜蘭市民族路145巷8號</td>
-                    <td>宜市離塵不離城穩定收租雙面路廠房</td>
-                    <td>李R1/2</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>2:27</td>
-                    <td>宜蘭市和平路288號</td>
-                    <td>宜蘭市凱旋二段農建地  0467地號</td>
-                    <td>呂先生</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td></td>
-                    <td>1</td>
-                    <td>2:28</td>
-                    <td>宜蘭市和平路280號</td>
-                    <td>宜蘭市凱旋二段農建地  0467地號</td>
-                    <td>呂先生</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td></td>
-                    <td>1</td>
-                    <td>2:29</td>
-                    <td>宜蘭市和平路278號</td>
-                    <td>宜蘭市凱旋二段農建地  0467地號</td>
-                    <td>呂先生</td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td></td>
-                    <td>1</td>
-                    <td>2:30</td>
-                    <td>宜蘭市和平路306巷21號</td>
-                    <td>宜蘭市凱旋二段農建地  0467地號</td>
-                    <td>呂小姐</td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td></td>
-                    <td>1</td>
-                    <td>2:31</td>
-                    <td>宜蘭市和平路306巷25號</td>
-                    <td>宜蘭縣宜蘭市凱旋二段 地號：0466</td>
-                    <td>陳小姐</td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td></td>
-                    <td>1</td>
-                    <td>2:32</td>
-                    <td>宜蘭市和平路288號</td>
-                    <td>宜蘭縣宜蘭市凱旋二段 地號：0465</td>
-                    <td>呂先生</td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td>5</td>
-                    <td>1</td>
-                    <td>2:38</td>
-                    <td>黎明二路243巷26號</td>
-                    <td>冷凍食品加工廠房/一百坪冷凍/附設備器具</td>
-                    <td>游S</td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>回公司帶看吳大哥</td>
-                    <td></td>
-                </tr>
+                <!-- Data Rows will be inserted here dynamically -->
             </tbody>
         </table>
-    </main>
-    <footer>
-        <p>Contact Information:</p>
-        <p>Phone: 039-383009</p>
-        <p>Address: 宜蘭縣宜蘭市校舍路12號</p>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
-    </footer>
+    </div>
+
+    <script>
+        // Updated data extracted from JSON file
+        const scheduleData = [
+            { name: "近轉運站通勤族最愛孝親四房樓中樓", type: "華夏", address: "宜蘭縣宜蘭市林森路336巷12號", owner: "黃S", price: 598, status: "住台北不常回來" },
+            { name: "員山鄉茄苳乙種建地使用空間大稀有廠房", type: "廠房", address: "宜蘭縣員山鄉茄苳路3之1號", owner: "林R", price: 3500, status: "" },
+            { name: "新月商圈文化中心文教區超優透天", type: "透天", address: "宜蘭縣宜蘭市泰山路112巷1弄26號", owner: "伍R", price: 1228, status: "不住這" },
+            { name: "宜市離塵不離城穩定收租雙面路廠房", type: "廠房", address: "宜蘭縣宜蘭市清華路322號", owner: "李R1/2", price: 3580, status: "" },
+            { name: "二結蘭陽大橋旁近高鐵地形方正廠房", type: "廠房", address: "宜蘭縣五結鄉溪濱路三段261.263號", owner: "真善美彩色印刷有限公司", price: 12000, status: "" },
+            { name: "買土地送165坪大廠房", type: "廠房", address: "宜蘭縣三星鄉大隱中路255巷55號", owner: "林S(113/6拍賣取得)", price: 1300, status: "" }
+        ];
+
+        const tableBody = document.querySelector('#scheduleTable tbody');
+        const searchBox = document.querySelector('#searchBox');
+
+        // Function to display schedule data
+        function displayData(data) {
+            tableBody.innerHTML = ""; // Clear table body
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.type}</td>
+                    <td>${item.address}</td>
+                    <td>${item.owner}</td>
+                    <td>${item.price}</td>
+                    <td>${item.status}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Initial render
+        displayData(scheduleData);
+
+        // Search functionality
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredData = scheduleData.filter(item =>
+                item.name.toLowerCase().includes(searchTerm) ||
+                item.address.toLowerCase().includes(searchTerm) ||
+                item.owner.toLowerCase().includes(searchTerm)
+            );
+            displayData(filteredData);
+        });
+    </script>
 </body>
 </html>
